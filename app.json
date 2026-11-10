@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "BasketWise",
+    "slug": "basketwise",
+    "version": "1.0.0",
+    "scheme": "basketwise",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#080D18",
+    "ios": {
+      "supportsTablet": true,
+      "backgroundColor": "#080D18",
+      "infoPlist": {
+        "NSCameraUsageDescription": "BasketWise uses your camera to scan supermarket receipts so it can build your personal price history.",
+        "NSPhotoLibraryUsageDescription": "BasketWise needs access to your photos so you can upload a receipt image instead of using the camera."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#080D18",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      ["expo-router", { "root": "./src/app" }],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "BasketWise uses your camera to scan supermarket receipts so it can build your personal price history."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "BasketWise needs access to your photos so you can upload a receipt image instead of using the camera."
+        }
+      ],
+      "expo-secure-store",
+      "expo-sqlite",
+      "expo-status-bar"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
